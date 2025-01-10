@@ -4,12 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Resume Resume1 = new Resume();
-        Resume1._name = "Paul Best";
-        Resume1._jobs = "";
-
-        Resume1.Display();
-
 
         Job job1 = new Job();
         job1._jobTitle = "Software Engineer";
@@ -27,6 +21,15 @@ class Program
         job2._endYear = 2023;
 
         job2.Display();
+
+        // Corrections from sample solution
+        Resume Resume1 = new Resume();
+        Resume1._name = "Paul Best";
+
+        Resume1._jobs.Add(job1);
+        Resume1._jobs.Add(job2);
+
+        Resume1.Display();
 
     }
     
