@@ -6,7 +6,7 @@ class Program
     {
         Resume Resume1 = new Resume();
         Resume1._name = "Paul Best";
-        Resume1._jobs = "Junior Developer";
+        Resume1._jobs = "";
 
         Resume1.Display();
 
