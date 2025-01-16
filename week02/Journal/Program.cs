@@ -1,31 +1,60 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 
 class Program
 {
     static void Main(string[] args)
     {
-    //Console.WriteLine("Hello World! This is the Journal Project.");
-    Console.WriteLine("Welcome to the Journal Program!");
-    Console.WriteLine("Please select one of the following choices:");
-    Console.WriteLine("1. Write");
-    Console.WriteLine("2. Display");
-    Console.WriteLine("3. Load");
-    Console.WriteLine("4. Save");
-    Console.WriteLine("5. Quit");
-    Console.Write("What would you like to do? ");
+        Journal journal = new Journal();
+        PromptGenerator promptGenerator = new PromptGenerator();
+        promptGenerator.Prompts();
 
-    string entry = Console.ReadLine();
-    int choice = int.Parse(entry);
+        while (true)
+        {
+            Console.WriteLine("Welcome to the Journal Program!");
+            Console.WriteLine("Please select one of the following choices:");
+            Console.WriteLine("1. Write");
+            Console.WriteLine("2. Display");
+            Console.WriteLine("3. Load");
+            Console.WriteLine("4. Save");
+            Console.WriteLine("5. Quit");
+            Console.Write("What would you like to do? ");
 
-    // PromptGenerator 
+            string entry = Console.ReadLine();
+            int choice = int.Parse(entry);
 
+            if (entry == "1")
+            {
 
-    // Journal myJournal = new Journal();
+            }
 
+            else if (entry == "2")
+            {
 
+            }
 
-    //Entry myEntry = new Entry();
+            else if (entry == "3")
+            {
 
-    //myEntry.Display();
+            }
+
+            else if (entry == "4")
+            {
+
+            }
+
+            else if (entry == "5")
+            {
+                break;
+            }
+
+            else
+            {
+                Console.WriteLine("Please enter a choice 1-5 ");
+            }
+
+        }
     }
+
 }
