@@ -17,9 +17,11 @@ public class Journal
             entry.Display();
         }
     }
-    public void SaveToFile(string filename)
+    public void SaveToFile(string filename) //public void SaveToFile(List<Entry>)??
     {
-        using(StreamWriter outputFile = new StreamWriter(filename))
+        string file = "journal.txt";
+
+        using(StreamWriter outputFile = new StreamWriter(file))
         {
             foreach(Entry entry in _entries)
             {
@@ -29,6 +31,13 @@ public class Journal
     }
     public void LoadFromFile(string file)
     {
+        //_entries.Clear();??
+        string[] lines = System.IO.File.ReadAllLines(file);
+
+        foreach(string line in lines)
+        {
+            Console.WriteLine(line);
+        }
 
     }
 
