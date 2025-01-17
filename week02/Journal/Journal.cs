@@ -17,9 +17,9 @@ public class Journal
             entry.Display();
         }
     }
-    public void SaveToFile(string filename) //public void SaveToFile(List<Entry>)??
+    public void SaveToFile(string filename)
     {
-        // string file = "journal.txt";
+        Console.WriteLine("Saving to file..."); // Exceeding requirements 
 
         using(StreamWriter outputFile = new StreamWriter(filename))
         {
@@ -31,7 +31,8 @@ public class Journal
     }
     public void LoadFromFile(string filename)
     {
-        //_entries.Clear();??
+        Console.WriteLine("Reading from file..."); // Exceeding requirements 
+
         string[] lines = System.IO.File.ReadAllLines(filename);
 
         foreach(string line in lines)
