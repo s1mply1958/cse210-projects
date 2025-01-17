@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
+
 class Program
 {
     static void Main(string[] args)
@@ -26,21 +27,34 @@ class Program
 
             if (entry == "1")
             {
+                string prompt = promptGenerator.GetRandomPrompt();
+                Console.WriteLine($"Prompt: {prompt}");
+                Console.Write("Your input: ");
+                string response = Console.ReadLine();
+
+                Entry newEntry = new Entry (DateTime.Now.ToShortDateString(), prompt, response);
+                journal.AddEntry(newEntry);
 
             }
 
             else if (entry == "2")
             {
-
+                journal.DisplayAll();
             }
 
             else if (entry == "3")
             {
+                Console.Write("Enter file name to load: ");
+                string fileName = Console.ReadLine();
+                journal.LoadFromFile(fileName);
 
             }
 
             else if (entry == "4")
             {
+                Console.Write("Enter file name to save: ");
+                string fileName = Console.ReadLine();
+                journal.SaveToFile(fileName);
 
             }
 
@@ -51,7 +65,7 @@ class Program
 
             else
             {
-                Console.WriteLine("Please enter a choice 1-5 ");
+                Console.WriteLine("Please enter a choice between 1-5 ");
             }
 
         }

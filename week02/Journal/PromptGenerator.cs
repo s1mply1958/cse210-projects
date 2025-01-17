@@ -10,7 +10,7 @@ public class PromptGenerator
         _prompts.Add("How did you see the hand of the Lord in your life today?");
         _prompts.Add("How did you hear Him today?");
         _prompts.Add("What did you accomplish today?");
-        _prompts.Add("Describe three blessings recieved today?");
+        _prompts.Add("Describe three blessings received today?");
         _prompts.Add("Describe something that you learned today?");        
     }
 

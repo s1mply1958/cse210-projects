@@ -19,9 +19,9 @@ public class Journal
     }
     public void SaveToFile(string filename) //public void SaveToFile(List<Entry>)??
     {
-        string file = "journal.txt";
+        // string file = "journal.txt";
 
-        using(StreamWriter outputFile = new StreamWriter(file))
+        using(StreamWriter outputFile = new StreamWriter(filename))
         {
             foreach(Entry entry in _entries)
             {
@@ -29,14 +29,20 @@ public class Journal
             }
         }
     }
-    public void LoadFromFile(string file)
+    public void LoadFromFile(string filename)
     {
         //_entries.Clear();??
-        string[] lines = System.IO.File.ReadAllLines(file);
+        string[] lines = System.IO.File.ReadAllLines(filename);
 
         foreach(string line in lines)
         {
-            Console.WriteLine(line);
+            string date = lines[0];
+            string promptText = lines[1];
+            string entryText = lines[2];
+
+            Entry entry = new Entry(date, promptText ,entryText);
+            _entries.Add(entry);
+            
         }
 
     }
