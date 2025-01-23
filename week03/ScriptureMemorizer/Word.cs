@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Generic;
 
 public class Word
 {
-private string _text;
-private bool _isHidden;
+    private string _text;
+    private bool _isHidden;
 
 
     public Word(string text)
@@ -28,13 +29,22 @@ private bool _isHidden;
     public bool IsHidden()
     {
         return _isHidden;
-        
+
     }
 
     public string GetDisplayText()
     {
-        return "";
-    }
+        if (_isHidden == true)
+        {
+            return new  string('_', _text.Length);
 
+        }
+        else
+        {
+            return _text;
+            
+        }
+
+    }
 
 }
