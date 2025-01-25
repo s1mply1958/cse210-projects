@@ -38,6 +38,9 @@ public class Scripture
         return "";
     }
 
+
+
+
     public bool IsCompletelyHidden()
     {
         return  true; 
